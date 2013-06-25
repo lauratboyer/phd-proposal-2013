@@ -8,7 +8,20 @@
 \usepackage{pdfsync}
 \usepackage{enumerate}
 \usepackage{verbatim}
+\usepackage{caption}
 \usepackage{pdflscape} % makes landscape pages horizontal
+\usepackage{hyperref}
+\usepackage{color}
+
+% define new color to use in hyperlinks
+\definecolor{darkgreen}{rgb}{0,0.5,0}
+\definecolor{darkblue}{rgb}{0,0,0.5}
+% tell package hyperref to use these when linking
+\hypersetup{ colorlinks,
+linkcolor=darkgreen,
+filecolor=darkgreen,
+urlcolor=darkblue,
+citecolor=darkblue}
 
 % define command to add Celsius degrees
 \newcommand{\griddef}[2]{$#1 \times #2^\circ$}
@@ -43,7 +56,7 @@ large distances through their migratory behavior
 
 In addition, tuna and billfish fisheries serve as an important source
 of proteins to Pacific islands nations, and offer what is often the
-only source of foreign revenue to the local economies of these island
+only source of foreign revenue to the local economies of these
 states. Many of these species are heavily exploited by modern
 fisheries, with more than 60\% of the tuna consumed globally
 coming from the Western and Central Pacific \citep{Williams2012_a}.
@@ -54,23 +67,38 @@ to be abundant (S. Harley, \emph{pers. comm}). Management advice
 currently provided to Pacific Islands states does not account for a
 potential change in the range of target species and a number of
 countries have showed concern in this regard (S. Harley,
-\emph{pers. comm}). The optimal strategy for the regional management of
-these species would likely be impacted if range contraction was
-indeed occuring.
+\emph{pers. comm}).
 
-The geographical range of tuna and billfish can be partly explained
-through features of the marine environment
-\citep[e.g.][]{Reygondeau2012_a}. On small temporal scales they
-track specific conditions in the water column like sea surface
+%%% WORK ON THIS %%%%
+Abundance-range relationships are defined in this thesis as an
+observed link, direct or indirect, between species total or local
+abundance and the area of its geographic range. A number of
+studies in ecology have observed a link between population abundance
+and range size \citep{Gaston2000_a, MacCall1990_a, Lawton1993_a} and
+it is likely that the range of harvested species, like large
+pelagics, could be affected by such behaviour as their biomass
+declines under management. If so, the
+optimal strategy for the regional management of large pelagics could
+be impacted as some regions would be overtly affected by biomass depletion
+even though the overall stock is considered healthy. Changes in range
+size over time could also bias estimates of biomass since stock
+assessments often implicitly assume that range area stays constant over
+time.
+
+To understand whether abundance-range relationships exist in large
+pelagics, we need to understand the links between population dynamics
+and the use of habitat by individuals. The geographical range
+of tuna and billfish can be partly explained through features of the
+marine environment \citep[e.g.][]{Reygondeau2012_a}. On small temporal
+scales they track specific conditions in the water column like sea surface
 temperature, depth of the thermocline, salinity and oxygen
 concentration \citep[e.g.][]{Fiedler1987_a, Reese2011_a}. Large-scale
-climate cycles that affect these conditions and which are prevalent in
-the Pacific (e.g. ENSO, El Nino Southern Oscillation) can thus result
+climate cycles that affect these conditions -- and are also prevalent in
+the Pacific (e.g. ENSO, El Nino Southern Oscillation) -- can thus result
 in important changes in the geographic distribution of some of these
 species between years \citep{Lehodey1997_a}.
 
-Fishing pressure is another factor that could affect where these
-species are found. A recent report indicated that the range of many
+Fishing pressure is another important factor to account for. A recent report indicated that the range of many
 tuna and billfish had contracted since the 1970s \citep{Worm2011_a},
 although the link to fishing pressure was based on correlative rather
 than mechanistic evidence. There are multiple examples from the
@@ -122,18 +150,16 @@ might serve to supplement the thesis if needed.\\
 \section*{Chapter 1: Current understanding of species distributions}
 \addtocounter{section}{1}
 
-\emph{A literature review will be conducted to (1) identify key
+\emph{A literature review has been conducted to (1) identify key
   ecological and evolutionary factors that should be accounted for
   in the measurement and modelling of range contraction, and (2)
   create a framework to synthesize current understanding of the
   geographic range across disciplines.}
 \\
 
-% and
-%has been a longheld interest of naturalists.
 Anthropogenic global change has resulted in drastic changes in the
 distribution of many species and, consequently, the last
-two decades have seen an explosion of studies aimed at understanding
+two decades have seen an important rise in research aimed at understanding
 the drivers of species' distributions. The geographic
 range ties in many aspects of a species' biology such that,
 unsurprisingly, a variety of approaches have been developed to tackle
@@ -146,7 +172,8 @@ contraction.
 
 Moving our focus to marine systems, research on the geographic range
 in this realm has been minimal compared to terrestrial
-systems. A possible reason could be that species occurrence data are hard to obtain for marine
+systems. A possible reason could be that species occurrence data are
+hard to obtain for marine
 species due to the nature of their habitat (e.g. museum
 records are not available to the extent they are for terrestrial
 species) \citep[see][]{Tyberghein2012_a}. Range boundaries for
@@ -164,16 +191,16 @@ hypothesis \citep{MacCall1990_a} which posits that intra-specific factors like
 competition for resources in varied habitats result in a relationship between
 range size and abundance \citep[but see][]{Shepherd2004_a}.
 
-In light of this, the goal of this chapter is to perform a
+In light of this, the goal of this chapter was to perform a
 literature review on the geographic range across the following
 disciplines: behaviour, conservation science, ecology, evolution,
-fisheries science, genetics and paleobiology. A second aim is to
+fisheries science, genetics and paleobiology. A second aim was to
 create a framework to synthesize our understanding of this
 literature along three axes: environmental \emph{vs.} biotic
 drivers, single \emph{vs.} community effects, marine \emph{vs.}
 terrestrial systems.\\
 \\
-Current status: first draft 95\% completed, need to format for
+\textbf{Current status:} first draft 95\% completed, need to format for
 journal submission (journal to be determined), ideally need a second
 author with research experience in topics related to species
 distributions.
@@ -188,10 +215,10 @@ distributions.
   as well as highlight features of commonly available datasets that
   could confound measurements of range contraction.}\\
 
-In order to detect range contraction, we need species occurence data that covers the entire
+In order to detect range contraction, we need species occurence data that cover the entire
 distribution of a species, ideally on a long-term basis. When
 these data exist, however, it is often at a coarse scale. Can we make inference
-about changes in a species' distribution from such datasets ? What are
+about changes in a species' distribution from such datasets? What are
 the confounding variables that are likely to bias our analysis? In
 this chapter I use \griddef{5}{5} aggregated catch-and-effort
 data of large pelagics in the Pacific since the
@@ -214,11 +241,14 @@ applied where the two datasets overlap.
 %it must be absent from locales where it used to be present more often
 %than in the opposite situation.
 
-Throughout this thesis I will define range contraction as any decline
-in the area where a species used to be abundant. This is partly for
-practical reasons as we could not tell from the data whether a species
-is absent with full certainty. It, however, also has an ecological
-justification: it is informative to document instances where the
+Throughout this thesis I will define range contraction as a decline
+in the area where a species' abundance used to be above a given
+rarity threshold. This threshold is user-defined and could be adapted
+based on research or management goals. This is partly for
+practical reasons as the available data would not allow us to demonstrate
+with full certainty that a species is absent from previously occupied
+regions. It, however, also has an ecological justification as it is
+informative to document instances where the
 species went from abundant to rare, since this abundance decline might
 (1) be the precursor to extirpation and (2) indicate that ecosystem
 dynamics in those locales are likely to be changing. CPUE data
@@ -258,16 +288,6 @@ Pacific. Figure \ref{fig1} gives an overview of the dataset for the 6 most
 commonly caught species.
 % Here SM suggests to show CPUE instead of catch density. DONE.
 
-\begin{figure}
-\includegraphics[scale=0.725]{PhD_Proposal_Spring2013_Fig1_nogrid}
-\caption{\label{fig1}
-Summary of catch-and-effort for the \griddef{5}{5} aggregated data from
-  the SPC for the 6 most frequently caught species: Map of relative
-  catch-per-unit-effort aggregated over decade and standardized for
-  each species; proportion of
-  each species in the total catch (left); total catch across species
-  by decade  (in million individuals) (top).}
-\end{figure}
 
 \subsection{Using CPUE as an index of abundance}
 
@@ -292,32 +312,52 @@ about the assumptions made in its use. An important challenge in
 the current work will thus be to develop analyses that are robust to
 the limitations of CPUE data.
 
+%%%%% FIGURE 1 %%%%%
+% code to center figure in landscape found on tex-stackexchange
+% "vertical-centering-of-figure-in-landscape-environment"
+\begin{landscape}
+\thispagestyle{empty}
+\parbox[c][\textwidth][s]{\linewidth}{
+\vfill
+\includegraphics[width=\linewidth]{PhD_Proposal_Spring2013_Fig1_nogrid}
+\captionof{figure}{Summary of catch-and-effort for the \griddef{5}{5} aggregated data from
+  the SPC for the 6 most frequently caught species: Map of relative
+  catch-per-unit-effort aggregated over decade and standardized for
+  each species; proportion of
+  each species in the total catch (left); total catch across species
+  by decade  (in million individuals) (top).\label{fig1}
+} %using \captionof lets
+                                %the caption float along the figure
+\vfill
+}
+\end{landscape}
 
 \subsection{Predicting CPUE in space and time}
 % In this chapter I will use the 5x5 japanese LL dataset to create a
 % relative abundance of tuna over the Pacific
 % Need to fill the holes in space and time
-The \griddef{5}{5} longline dataset available through the SPC arguably
+The \griddef{5}{5} longline dataset available through the SPC
 has the largest spatial and temporal coverage for marine
 species in the Pacific. Nonetheless, there remain many cells with missing
-catch-and-effort data either for a section or the entirety of the
+catch-and-effort data, either for a section or the entirety of the
 time-series. As pointed out by \citet{Walters2003_a}, the
 failure to explicitly consider cells with no fisheries data is a
 common error made in CPUE analyses and can lead to wrong inferences
 about abundance trends. For instance \citet{Myers2003_a} assumed that
 trends in CPUE data for a subset of cells in the Pacific were
 representative of overall stock trends and predicted a decline in abundance much
-higher than that measured in more involved subsequent analyses
+higher than that measured in subsequent, more involved analyses
 \citep{Sibert2006_a}. Special attention must thus be provided to
 filling cells with missing data so that the \griddef{5}{5} dataset can serve
 as an unbiased proxy for abundance over the Pacific. Current
-approaches to filling in abundance are rule-based, for example
+approaches to filling in abundance are rule-based. For example
 \citet{Carruthers2011_a}, following suggestions by
 \citet{Walters2003_a}, used simulated data to test a rule-based
 approach to fill-in missing CPUE cell data based on data
-existing for that cell in subsequent years. One important advantage with
-the rule-based approach is that it is straight-forward to apply and
-understand. However, for the approach to be
+existing for that cell in subsequent years and found that the
+resulting abundance indices were more accurate. One important advantage with
+the rule-based approach is that it is straight-forward to understand and
+apply. However, for the approach to be
 practical, we are restricted to one dimension: the value of a cell can
 only be affected by values of that same cell in future years, even
 though data from neighbouring cells in the current year might be
@@ -352,7 +392,7 @@ address this by providing indication of the likely stock abundance
 expected in cells with no effort data given the environmental
 suitability. A quick exploration showed that sea temperature and time on
 their own explained 45\% of the variance in the \griddef{5}{5} CPUE dataset,
-confirming the assertion that oceanographic variables would be good
+supporting the assertion that oceanographic variables would be good
 candidates to inform abundance levels in unobserved cells.
 
 One of the main challenges in fitting a spatio-temporal spline model
@@ -366,11 +406,11 @@ quite large.
 %variable is much higher in the tropics than in temperate zone such
 %that model error ends up being much higher in high latitudes.
 
-Lastly, to apply this method to all large pelagics, I would have
-to account for the different properties that target
-and by-catch species have in catch datasets. For instance, effort is
-not always linked to abundance for by-catch species such that a CPUE
-derived from effort targeted at another species might not yield a
+Lastly, I will have to account for the different properties that target
+and by-catch species have in catch datasets to apply this method to
+all large pelagics. For instance, effort is not always linked to
+abundance for by-catch species such that a CPUE derived from effort
+targeted at another species might not yield a
 representative index of abundance \citep[see][]{Ortiz2004_a}. A way to address this could be to focus the
 analysis on target species only, which would be identified either
 through the use of a separate dataset of covariates informative of the
@@ -385,14 +425,14 @@ data into subsets where a single species is being targeted.
 %more often.
 
 \subsection{Impact of data resolution on measured trends}
-
+\label{chap2part2}
 %Could also link back to Rabeck et al (2005) and studies on species
 %richness.
 
 A second component of this chapter will be to investigate the
 sensitivity of results to the scale of data aggregation. \griddef{5}{5}
 cells have an area between 230 000 and 310 000 km$^2$ -- the assumption
-that CPUE rates averaged at that resolution are representative of
+that aggregated CPUE rates are representative of
 CPUE rates experienced by individual boats is thus an important one. I
 have access to two datasets that provide catch-and-effort data at a finer
 resolution for the Pacific: (1) operational fisheries data (catch reports by
@@ -404,20 +444,29 @@ the impact of scale where the datasets overlap.
 Overall patterns in catch rates over space and time will be investigated to
 see if they match those obtained at a coarse resolution. In addition I
 will try to detect patterns of spatial expansion of fishing within
-\griddef{5}{5} cells. The latter would inform us about whether
+\griddef{5}{5} cells. The latter would tell us whether
 declines might be due to serial depletion of fishing
-grounds. This additional work will allow to highlight features of data
+grounds. This additional work will highlight features of data
 resolution that can confound the detection of range contraction, and
 also provide support (or not) for patterns detected at the Pacific
 basin scale \footnote{if we assume that
 differences between fine and coarse dataset for the overlap are
 representative of what they would be at the scale of the
-Pacific}. Finally, using trip data could allow us to account for targeting
-to see whether the cessation of fishing effort in a cell is due to a depletion
-of the ressource, or to a change in targeting strategy by the fishermen.
-(Include map showing spatial/temporal coverage for both dataset?)\\
+Pacific}. Another option would be to use trip data to estimate
+targeting and see whether the cessation of fishing effort in a cell is
+due to a depletion of the ressource or to a change in
+targeting strategy by the fishermen.
+
+Lastly, spatial resolution can also affect the measured area of the
+geographic range \citep{Hurlbert2007_a} and bias perceived rates of
+change in space or in time (\citealp{Rahbek2005_a}, see also Figure
+\ref{figspatialres}). The trip dataset could
+be used to investigate how spatial resolution affects rates of range
+change. In addition to making the analysis more robust, this will be
+useful preparatory work for Chapter 3 which will require measurement
+of range as part of the modelling of range-abundance relationships.
 \\
-Current status: Analysis 95\% done on \griddef{5}{5} for sample
+\textbf{Current status:} Analysis 95\% done on \griddef{5}{5} for sample
 species yellowfin tuna, starting on other species and fine resolution
 data, short paper presented to Pacific Islands Forum Fisheries Agency.
 
@@ -425,7 +474,7 @@ data, short paper presented to Pacific Islands Forum Fisheries Agency.
 %conservative
 %Main issue 2: targeting (why boats are abandoning cells)
 
-%Lastly, a key issue to address in this chapter will be the interaction
+%Lastly, a key issue to address in this Chapter will be the interaction
 %between climatic drivers and fishing pressure on the realized range of
 %tuna and billfish. The use of simulated data and scenarios might be a
 %tool to untangle the strength of the influence of one vs. the other.\\
@@ -441,7 +490,7 @@ characteristics on (1) the
 relationship between geographic range and population size and (2) the
 distribution of biomass in the range as abundance declines.}\\
 
-% chapter overview:
+% Chapter overview:
 The interpretation of observed spatial trends in the abundance of
 large pelagics can be complicated due to (1) the high-mobility of
 these species; (2) the prevalence of dynamic oceanographic conditions
@@ -481,8 +530,8 @@ these fisheries will be considered in the next chapter.
 
 \subsection{Movement, dispersal and migration \emph{vs.} abundance-range size relationships}
 
-The use of habitat by individuals and how that changes with abundance
-could have a strong impact on geographic range dynamics. It is obvious that
+The mechanism that links habitat use by individuals and local or total
+abundance could have a strong impact on geographic range dynamics. It is obvious that
 the range occupied by a critically endangered
 species with 10 individuals would be less than that originally
 occupied by the population when it was abundant. But what
@@ -492,27 +541,29 @@ Dispersal behaviour is a main candidate to explain how some
 aspects of this contraction would occur. For instance, if
 individuals are sedentary we would expect that geographic contraction
 would occur first where mortality is highest. If they are mobile (like
-large pelagics), then a process like density-dependent habitat
-selection could occur, whereby population contracts towards high
-quality habitat as overall abundance is reduced.
+large pelagics), then a process like \emph{density-dependent habitat
+selection} could occur, whereby individual immigration towards
+optimal, core habitats increases as overall population abundance declines
+and the effective suitability of these high-quality habitats
+increases, possibly due to a lessening of intra-specific competition
+\citep{MacCall1990_a}.
 
 The relationship between the abundance of a species and the extent of
 its distribution implies that some component of the way invididuals,
 groups or populations use their environment is density-dependent. For
 instance, consider the case where individuals are randomly distributed
-throughout their range (Figure \ref{lili}, left column). If abundance
+throughout their range (Figure \ref{figmov}, left column). If abundance
 declines and home range stays constant, then the area of the range
 will decline as well, though not as much as if individuals tend to
-aggregate (right column). The only way for range size to stay constant
-as population declines would be for the home range of individuals to
+aggregate (right column). In order for range size to stay constant
+as abundance declines, the home range of individuals has to
 increase to compensate (left column, bottom).  Density-dependent
 dispersal has been documented in a number of species
 \citep{Matthysen2005_a} and could be a mechanism through which such
 range-abundance dynamics emerge.
 
 In the current chapter I propose to use large pelagics as a model system to
-explore how/whether range dynamics can emerge in non-sedentary
-populations. Large pelagics are a good case-study to address this
+explore how/whether range dynamics can emerge in mobile species. Large pelagics are a good case-study to address this
 question for the following reasons:
 \begin{enumerate}[--]
 \item Large pelagics are highly-mobile \emph{and} migratory. These two
@@ -535,7 +586,6 @@ understanding of their range dynamics would be useful \emph{now}.
 
 % description for figure
 \begin{figure}[!h]
-\label{lili}
 \begin{center}
 \includegraphics[scale=0.75]{PhD_ResearchProposal_DiagramAreaAbundanceHomeRange2.png}
 \caption{Effects on the range of a reduction of abundance of one fifth from
@@ -546,7 +596,8 @@ understanding of their range dynamics would be useful \emph{now}.
   diminishes. In the former this results in small reduction in range
   while in the latter the reduction in range is high. In case (3) home
   range size increases such that population range size stays the same
-  despite the one fifth decline in abundance.}
+  despite the one fifth decline in abundance. \label{figmov}
+}
 \end{center}
 \end{figure}
 
@@ -573,7 +624,6 @@ e.g.][]{Swain1994_a}. Another option would be to extract effort
 patterns from the SPC database and use those to drive the model.
 
 \begin{figure}
-\label{chap3diag2}
 \includegraphics[scale=0.75]{LTB_ResProposal_2013_Chap3_Diagram2.png}
 \caption{Schematic representation of the distribution of biomass of
   highly-mobile pelagics in unfished (dark blue line) vs. fished
@@ -589,7 +639,9 @@ patterns from the SPC database and use those to drive the model.
   pronounced when there is increased immigration towards the core,
   though the effect vary as a combination of the difference in
   fishing mortality between the core and the edges and the impact of
-  abundance on immigration rates (bottom-right figure).   }
+  abundance on immigration rates (bottom-right figure).
+\label{chap3diag2}
+}
 \end{figure}
 
 
@@ -619,19 +671,54 @@ patterns from the SPC database and use those to drive the model.
 %environment.
 
 \subsection{The iSCAM model}
+In order to investigate links between abundance and range size I will
+need a population dynamics model that is explicit in space. In
+addition, a model compatible with a fisheries framework would be ideal as I
+will be comparing results to fisheries data and use the model in the
+next chapter to investigate management impacts. I propose to use iSCAM
+as a starting point for the model \citep{Martell2012_a}, where iSCAM
+stands for ``integrated statistical
+catch at age model''. It is an age-structured population model used
+for stock assesments that can accomodate a range of life histories and
+is also designed to run fast. I would have to extend the model to make
+it spatially explicit on a grid and include density-dependent
+movement/home range/migration relationships. This is likely to be one
+of the main challenges in model formulation and will rely on the
+definition of a relationship between local abundance and some form of
+habitat use by individuals. The advantage of starting from a model
+that already exists \emph{vs.} writing one of my own is that I get to start
+from a robust, well-tested base and focus my energy on the spatial
+component, which is the one that matters the most for the questions at
+hand. I would still get the model developing experience as I am
+extending the model into space which will be a significant amount of
+work in itself.
 
-I propose to use iSCAM as a starting point for the model
-\citep{Martell2012_a}. iSCAM stands for ``integrated statistical catch at age
-model''. iSCAM is currently under development and is a population
-model used in stock assesments, which would make it suitable to model the
-CPUE data from large pelagics in the Pacific. I would have to extend
-the model to make it spatially explicit on a grid, and include
-density-dependent movement/home range/migration relationships. This is
-likely to be one of the main challenges in model formulation and will
-rely on the definition of a relationship between local abundance and
-some form of habitat use by individuals.
+\subsection{Defining the range in practice}
+A key part of the modelling will be the assessment of geographic
+range size. The metric used to do so could affect perceived trends in
+space and time \citep{Hurlbert2007_a}. This issue is prevalent in
+ecology, conservation and behaviour studies. For instance many
+macroecologists persist in using minimum convex polygons even though
+they often overestimate range size \citep{Burgman2003_a}. As
+the basic unit of space here will be the cell, it would be
+straight-forward to measure the range as the number of cells occupied
+(or with biomass above a given threshold). However the cell resolution
+could affect trends in range area over time, see Figure \ref{figspatialres}. One way to
+address this would be to aggregate the modelled outputs at various
+resolutions to see how sensitive conclusions are. Issues of results
+sensitivity to resolution are also addressed in the second part of
+Chapter 2 (see section \ref{chap2part2}).
 
-\subsection{Comparing model predictions to observed patterns in
+\begin{figure}
+\centering
+\includegraphics[scale=0.58]{LTB_ResearchProposal_SpatialResolutionFig}
+\caption{Decline in time of a sample geographic range viewed under three spatial
+  resolutions. The right-column shows the relative decline in range
+  area over time for each resolution. A coarser grid resolution
+  results in a smaller decline and a positive bias in measured range area.
+\label{figspatialres}}
+\end{figure}
+\subsection{Comparing model predictions to observed trends in
   biomass distribution}
 
 Understanding temporal changes in the spatial distribution of biomass
@@ -698,7 +785,7 @@ conservation/management funds prioritization.
   fisheries management given scenarios about the drivers of range
   contraction, climate-recruitment relationships and management goals.}
 
-There are uncertainties at all steps of a fisheries' management,
+There are uncertainties at all steps of the management of a fisheries,
 from the data collection to the stock assessment to the policy makers'
 decisions and the implementation in real-life. Given that most of these
 uncertainties cannot be resolved, our approach to
@@ -715,12 +802,12 @@ objectives and  where components important to management
 The aim of this chapter is to explore the impacts of range dynamics
 on the recommended management strategy for tropical
 tuna fisheries in the Pacific. I will draw on the results from
-chapters 2 and 3 to identify key uncertainties in the modelling of range
+Chapters 2 and 3 to identify key uncertainties in the modelling of range
 contraction behaviour and population dynamics. The
 performance of management strategies will be assessed on a per-region
 basis since range contraction will have differential impacts on local fisheries
 based on their location in the target species' distribution. The MSE will be conceived in such a way that it
-renders the analyses of chapters 2 and 3
+renders the analyses of Chapters 2 and 3
 more robust. For instance, the effects of structural uncertainty in
 the modelled relationship between range size and abundance will be
 assessed by including scenarios for various mechanisms of range contraction.
@@ -734,7 +821,7 @@ explicitly models all of the steps that go into the management of a
 species: modelling, decision-making based on the model's results,
 application of decision to real world, etc. (see Figure
 \ref{msefig}). Uncertainty can be included
-at any stage, in the form of a ``scenario''. For instance the population model could include various
+at any stage, in the form of a \emph{scenario}. For instance the population model could include various
 mechanisms for abundance-range size relationships and population
 parameters could be related to temperature under a climate change
 scenario.
@@ -743,14 +830,19 @@ The objective of running a MSE is to identify a management strategy
 that performs well across all scenarios. One of the main advantages is that
 it requires an explicit formulation of management objectives important
 to stakeholders, as these are used to evaluate the success of a
-management strategy. Once the MSE has run for all combinations of
-scenario and management strategy, the performance of each strategy
-across all scenarios and over time can be compared.
+management strategy. In the present case for instance, the optimal strategy
+will likely be different based on whether an objective is to maintain
+high catch rates across the target's species range, since under range
+contraction this would (presumably) require stock biomass to be kept
+above $B_{MSY}$.
+
+The last step of the MSE is to compare the performance of each strategy
+over time across all scenarios once the MSE has run for all combinations of
+scenario and management strategies.
 
 \begin{figure}
 \begin{center}
 \includegraphics[scale=0.5]{ResearchProposalSpring2013_MSEdiagram}
-\label{msefig}
 \caption{Flow chart of the modelling component of MSEs. The operating
   model represents population dynamics and is calibrated using
   historical data to product a prediction of what the current state of
@@ -760,16 +852,18 @@ across all scenarios and over time can be compared.
   observation errors. This collected simulated future data is then
   used in the operating model to predict the state of the system at
   the next time step. This is repeated over a pre-defined time-frame
-  for each of the candidate management strategies.}
+  for each of the candidate management strategies.
+\label{msefig}
+}
 \end{center}
 \end{figure}
 
 \subsection{Applying MSE to range contraction in tropical tunas in the
   Pacific}
 
-The main goal of a MSE here is to evaluate the management impact of uncertainties
+The main goal of the current MSE is to evaluate the management impacst of uncertainties
 about the mechanisms underlying range dynamics as well as assess how
-countries might be affected based on the region they are in. The
+countries might be affected based on their geographic location. The
 process will be computationally-intensive so I will focus on a
 single species. Yellowfin tuna would be a good candidate here since it
 is an important tropical tuna fishery and my preliminary work
@@ -778,7 +872,7 @@ indicates that there might be evidence of range contraction.\\
 \noindent\textbf{Scenarios:} One of the key challenges in the assessment of
 range contraction in large pelagics is to untangle the effects of
 local fishing pressure from potential range-abundance relationships
-like DDHS. Modelling in chapter 3 should tell us the key parameters
+like DDHS. Modelling in Chapter 3 should tell us the key parameters
 that determine the acting mechanisms and their values
 could be used to formulate a set of scenarios. These scenarios are
 especially interesting from a regional management perspective as they
@@ -793,7 +887,7 @@ regional fisheries management, and climate change, as tuna
 distribution is sensitive to the environment and this question as been
 of interest to member countries.
 
-\noindent\textbf{Operating model:} The population model from chapter 3 would be
+\noindent\textbf{Operating model:} The population model from Chapter 3 would be
 used as an operating model.
 
 \noindent\textbf{Observation model:} A simple model could be used whereby
@@ -824,8 +918,7 @@ in the Atlantic.
 %MSE good way to explore structural uncertainty.
 
 \newpage
-\section*{Optional chapter 1: Interactions between industrial and artisanal
-  fisheries}
+\section*{Optional chapter 1: Industrial and artisanal fisheries interactions}
 
 One of the main socio-economic consequences of ecology-driven range
 contraction is that local catch rates could be impacted by fishing
@@ -837,21 +930,20 @@ chapter would be to develop metrics to assess the interaction between
 industrial and artisanal fisheries in countries likely to be affected
 by range contraction.
 
-I would use French Polynesia as a case study as they have been
-collecting fisheries data on their artisanal fleet since 1997 and have
-agreed to provide access to their dataset. French Polynesia consists
+I would use French Polynesia as a case study as they have fisheries
+data for their artisanal fleet from 1997 onwards\footnote{and have
+agreed to provide access to their dataset}. French Polynesia consists
 of a set of archipelagos located in the south-east of the Pacific and distant
 from the core of most tropical tuna species.
 
 Interactions between artisanal and industrial fleets can be direct
 and indirect. Direct interaction can occur when industrial fleets
 deplete ressources near islands, or prevent artisanal fishermen from
-fishing in certain locales. Indirect interaction can occur when
-industrial fleets affect the stock at the scale of the Pacific and
-impact catch rates of highly-mobile species targeted by artisanal
-fisheries. Note that the former is not necessarily linked to range
-contraction, but is an important way by which island nations are
-impacted by industrial fishing.
+fishing in certain locales. Indirect interactions can occur when
+industrial fleets deplete the overal stock, resulting in smaller catch
+rates for highly-mobily species targeted by artisanal fisheries. The
+former is not a result of range contraction, but is an
+important way by which island nations are impacted by industrial fishing.
 
 Methods to assess interactions would vary between direct and indirect
 effects. In the case of direct interactions, an option could be to
@@ -859,14 +951,12 @@ develop an index of species overlap (since, presumably, the interaction would be
 highest when targeted species are the same). This could be combined
 with a proxy for spatial interaction based on the location of industrial fishing
 effort as a function of its distance to the coast and weighted by the
-number of people living on the island of interest.
-
-To assess indirect interactions, local catch rates could be modelled together
+number of people living on the island of interest. To assess indirect interactions, local catch rates could be modelled together
 with Pacific-wide stock status indices in order to identify which
 proportion of the variation in local catch rates can be explained by
 signals from overall stock levels.
 
-Current chapter status: This is a report that I am preparing for the government of
+\textbf{Current chapter status:} This is a report that I am preparing for the government of
 French Polynesia (FP) (the project is coordinated by the SPC), to be
 submitted in the Fall of 2013. I have done a first exploratory trip to
 FP in March 2013 in which I worked with local fisheries scientists and
@@ -892,8 +982,8 @@ occurrence data for marine species in space and time. A common
 approach in fisheries science is to use the ratio of catch over
 fishing effort (catch-per-unit-effort, CPUE) as an index of abundance.
 However, fishing trips can also be seen as monitoring surveys which
-record species' presence in a given locale, that is, fishing
-trips collect presence data.
+collect presence data, as the occurrence of a given species in the catch
+shows that the species was present at that time and location.
 
 %If a given species was
 %caught during the fishing trip, then we know for sure that it was
@@ -908,16 +998,19 @@ time of the probability for a species to be present in a
 previously-occupied parts of its range would also indicate range
 contraction. Methods to detect such a change have been developed
 extensively in the climate change and exotic species literature, but
-few have been applied to marine problematics \citep{Robinson2011_a}.
+few have been applied to marine systems \citep{Robinson2011_a}.
 
-In chapter 2 I use CPUE data as a proxy for abundance and
+In Chapter 2 I use CPUE data as a proxy for abundance and
 quantify range contraction in large pelagics at the scale of the Pacific
 since the 1950s. There are, however, many confounding effects that
 hinder the use of CPUE data to infer trends in abundance over time. In
 addition, one of the main issues to resolve is whether contraction is
 caused by local depletion or ecological population-wide effects like
-DDHS. The low spatial resolution of the \griddef{5}{5} dataset makes
-it hard to investigate these hypotheses more closely.
+DDHS\footnote{Density-dependent habitat selection, defined in
+  Chapter 3, occurs when individuals make choice about the habitat
+  they occupy based on local density of conspecifics and habitat quality.}. The low spatial resolution of the
+\griddef{5}{5} dataset makes it hard to investigate these hypotheses
+more closely.
 
 Operational data (fishing records at the scale of individual trips)
 are available for some regions of the Pacific, in some instances since
@@ -961,6 +1054,7 @@ robust estimates of range dynamics in large pelagics in the Pacific.
 \newpage
 
 \singlespacing
+\small
 \bibliographystyle{apalike}
 \bibliography{TremblayBoyer_ResearchProposal_O&I_Biblio}
 
